@@ -1,7 +1,13 @@
 function getRandomNumber(){
     return Math.floor((Math.random() * 10) + 1);
 }
+function getLuckyNumber(){
+    return Math.floor((Math.random() * 10) + 1);
+}
 
+function l(text){
+    console.log(text);
+}
 /**
  * The function above is a random number generator. It generates a number
  * between 1 and 10. Don't worry about how it works, its just a tool to practice
@@ -40,7 +46,48 @@ function getRandomNumber(){
  *
  */
 
-let randomNumber = getRandomNumber() + getRandomNumber()
+//let randomNumber = getRandomNumber() + getRandomNumber();
+//console.log(randomNumber);
 
-console.log(randomNumber)
 
+let age = getRandomNumber() * 10;
+let price = 0;
+let fare = "";
+let lucky = getLuckyNumber();
+
+// Promo Lottery
+if(age < 5 && age > 65){
+    selector();
+}else{
+    if(lucky == 10){
+        winner();
+    }else{
+        selector();
+    }
+
+}
+
+function winner(){
+    l("Today is your lukcy day. You can pass");
+}
+
+function selector(){
+    if(age > 5 && age < 13){
+        l(`Your age is ${age} so you pay the child fare = €1`);
+    }else if(age > 13 && age <= 21){
+        l(`Your age is ${age} so you pay Teenager Fare = €5`);
+    }else if(age > 21 && age <= 30){
+        l(`Your age is ${age} so you pay Young Person Fare = €7`);
+    }else if(age > 30 && age <= 65){
+        l(`Your age is ${age} so you pay Adult Fare = €8`);
+    }else if(age > 65){
+        l(`Your age is ${age} so you DONT PAY, YOU PAYED ENOUGH = €8`);
+    }else if(age < 5){
+        l(`Your age is ${age} so you DONT PAY = €8`);
+    }else {
+        l("no funca con el numero: " + age );
+    }
+}
+
+l("age: "+ age);
+l("lucky: "+ lucky);
