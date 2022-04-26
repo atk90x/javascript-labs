@@ -14,3 +14,47 @@
  * find both ways!
  *
  */
+
+//for (let i = 0; i <= 100; i+=5){
+ //   l(i);
+//}
+
+/*for (let i = 100; i >= -100; i--){
+       l(i);
+}
+*/
+
+
+number = 0;
+/*
+balance = true;
+for (let i = 0; i <= 5000; i++){
+    if (balance == true){
+        number = number + 3;
+        balance = false;   
+    }else{
+        number = number -1;
+        balance = true;       
+    }
+    console.log(number);
+}
+*/
+
+/* for (let i = 0; i <= 5000; i++){
+    if (i % 2 == 0){
+        number = number +3;
+    }else number = number -1;
+    console.log(number);
+}
+console.log(number); */
+
+
+
+// I thougt this would work...
+/*for (let i = 0; i <= 2500; i++){
+    number = number +3;
+    console.log(number);
+    number = number -1;
+    console.log(number);
+}*/
+

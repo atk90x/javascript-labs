@@ -22,13 +22,49 @@
 
 // Write your code here:
 
+//C = K - 273.15
+function KtoC(value){
+    c = value - 273.15;
+    return c;
+}
 
+function CtoK(value){
+    k = value + 273.15;
+    return k;
+}
 
+function FtoK(value){
+    k = (((value - 32) * 5) / 9) + 273.15;
+    return k;
+}
 
+function KtoF(value){
+    f = ((value - 273.15) * 1.8) + 32;
+    return f;
+}
 
+function pythagoras(value1, value2){
+    f = Math.pow(value1, 2) + Math.pow(value2, 2);
+    return Math.sqrt(f);
+}
 
+function MToKm(value){
+    k = value * 1.609344;
+    return k;
+}
 
-
+function KmToM(value){
+    m = value * 0.62137;
+    return m;
+}
+function inchToCm(value){
+    cm = value * 2.54;
+    return cm;
+}
+function CmToInch(value){
+    cm = value / 2.54;
+    return cm;
+}
 
 // Do not modify anything below this line
 

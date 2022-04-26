@@ -9,3 +9,22 @@ function getRandomNumber(){
  *    random numbers until it has generated one that is divisible by 11. Do you
  *    remember what operator to use?
  */
+
+let i = 0;
+number = 0;
+while (i <= 5000){
+    if (i % 2 == 0){
+        number = number +3;
+    }else number = number -1;
+    //console.log(number);
+    i++
+}
+console.log(number);
+console.log("Exercise B ------------");
+
+number = getRandomNumber();
+//console.log(number);
+while (number % 11 !== 0){
+    console.log(number);
+    number = getRandomNumber();
+}
