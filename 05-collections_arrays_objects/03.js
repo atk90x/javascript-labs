@@ -70,3 +70,68 @@ stores =  [
     [ '4003IN', 'Target', 'IN', 'North', 'Attica' ],
     [ '4003KY', 'Target', 'KY', 'North', 'Ashland' ]
 ]
+
+for(i = 0; i < stores.length; i++){console.log(stores[i][4])}
+
+console.log("---------------------------------CA")
+
+for(i = 0; i < stores.length; i++){
+    if (stores[i][2] == "CA"){
+        console.log(stores[i][4])
+    }
+}
+
+console.log("---------------------------------Target")
+
+targetstores = 0;
+for(i = 0; i < stores.length; i++){
+    if (stores[i][1] == "Target"){
+        ++targetstores
+    }
+}
+console.log(targetstores);
+
+console.log("---------------------------------Types");
+// The following code is to collect all types of stores.
+alltypes = [];
+//collecting types
+for(i = 0; i < stores.length; i++){
+    alltypes.push(stores[i][1]);
+    }
+//Cleaning duplicated types in a set
+let types = new Set(alltypes); 
+//console.log(types);
+
+// The actual task:
+// Counters
+let ApplianceDirect = 0;
+let Target = 0;
+let KMart = 0;
+let CircuitCity = 0;
+let BestBuy = 0;
+
+for(i = 0; i < stores.length; i++){
+    if (stores[i][1] == "Appliance Direct"){
+        ApplianceDirect++;
+    }
+    if (stores[i][1] == "Target"){
+        Target++;
+    }
+    if (stores[i][1] == "K-Mart"){
+        KMart++;
+    }
+    if (stores[i][1] == "Circuit City"){
+        CircuitCity++;
+    }
+    if (stores[i][1] == "Best Buy"){
+        BestBuy++;
+    }
+}
+
+console.log(
+    `There are ${ApplianceDirect} Appliance Direct stores in total, 
+     There are ${Target} Target stores in total, 
+     There are ${KMart} K-Mart stores in total, 
+     There are ${CircuitCity} Circuit City stores in total,
+     There are ${BestBuy} BestBuy stores in total,`
+    );

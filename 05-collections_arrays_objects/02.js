@@ -16,5 +16,21 @@ lengths = [
  * paste the code you wrote previously into this file.
  */
 
+ function CmToInch(value){
+    cm = value / 2.54;
+    return cm;
+}
 
+inchlengths = [];
+for (i = 0; i<lengths.length; i++){
+    inchlengths[i] = CmToInch(lengths[i]);
+}
 
+let sumA = 0;
+let sumB = 0;
+for (let i = 0; i < lengths.length;i++){
+    sumA = sumA + lengths[i];
+    sumB = sumB + inchlengths[i];
+}
+
+console.log(`The average length in cm is ${sumA / lengths.length} , which is ${sumB / inchlengths.length} in inches`);
