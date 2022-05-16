@@ -938,3 +938,87 @@ let expenses = [
     "Bank of America - Credit Card",
   ],
 ];
+
+expenses.splice(0,1);
+
+/* Then, using forEach and arrow functions:
+ *
+ * 1. Output the total amount of expenses for 2017 and 2018.
+ * 2. Output the total amount paid for Groceries.
+ * 3. Output the total difference in each account after all transactions. So if
+ *    $100 was deposited into the account and $50 spent, then the total change
+ *    would be $50.
+ * 4. Create a new array that only has the date, description, and amount of rows
+ *    that have the category "Eating Out".
+ * 5. Create another array with only the date, description and amount of rows
+ *    that have the category "Gear and Clothing".
+ */
+
+//console.log(expenses[0][1]);
+// 1. Output the total amount of expenses for 2017 and 2018.
+total=0;
+
+expenses.forEach(element => {
+  if((element[0].match("2017") || element[0].match("2018")) & element[3] < 0){
+    total = total + element[3];
+  }
+});
+console.log(`The total amount of expenses is ${total}`)
+
+//  2. Output the total amount paid for Groceries.
+
+totalgr=0;
+
+expenses.forEach(element => {
+  if(element[2].match("Groceries")){
+    totalgr = totalgr + element[3];
+  }
+});
+console.log(`The total amount of groceries is ${totalgr}`);
+
+
+/* 3. Output the total difference in each account after all transactions. So if
+*    $100 was deposited into the account and $50 spent, then the total change
+*    would be $50. */
+
+// -------------------------------Gettin a clean array of accounts
+accounts = [];
+accountslist = [];
+expenses.forEach(element => {
+    accounts.push(element[5]);
+});
+accounts.forEach(element => {
+    if(accountslist.includes(element) == false){
+      accountslist.push(element);
+    }
+});
+// ---------------------------------Calculatin the rest for each account.
+accountslist.forEach(element => {
+  total = 0;
+  expenses.forEach(element2 =>{
+    if(element2[5] == element){
+      total = total + element2[3];
+    }
+  });
+  console.log(`The rest for the account ${element} is ${total}`);
+});
+
+/* 4. Create a new array that only has the date, description, and amount of rows
+ *    that have the category "Eating Out". */
+
+eatingOut = [];
+expenses.forEach(element => {
+  if (element[2] == "Eating Out"){
+    eatingOut.push([element[0],element[1],element[3]]);
+  }
+});
+
+/* 5. Create another array with only the date, description and amount of rows
+ *    that have the category "Gear and Clothing". */
+
+const gear = [];
+expenses.forEach(element => {
+  if (element[2] == "Gear and Clothing"){
+    gear.push([element[0],element[1],element[3]]);
+  }
+});
