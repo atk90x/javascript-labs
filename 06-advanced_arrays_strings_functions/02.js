@@ -963,7 +963,8 @@ expenses.forEach(element => {
     total = total + element[3];
   }
 });
-console.log(`The total amount of expenses is ${total}`)
+console.log(`The total amount of expenses is ${total}`);
+console.log(`The Cure`);
 
 //  2. Output the total amount paid for Groceries.
 
@@ -992,7 +993,7 @@ accounts.forEach(element => {
       accountslist.push(element);
     }
 });
-// ---------------------------------Calculatin the rest for each account.
+// ---------------------------------Calculating the rest for each account.
 accountslist.forEach(element => {
   total = 0;
   expenses.forEach(element2 =>{
